@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
+import './index.css'
 import { User, Users, ApiRequest, UsersListProps, UserCardProps } from './types'
 
 
 const UserCard = ({user}: UserCardProps) => {
   return(
-    <div>
-      {user.email}
+    <div className="card-container">
+      <img src={'picture'} alt="" />
+      <h3>{user.name.first} {user.name.last}</h3>
+      {/* <p>{user.email}</p> */}
     </div>
     )
 }
@@ -13,7 +16,7 @@ const UserCard = ({user}: UserCardProps) => {
 const UsersList = ({users}: UsersListProps) => {
   const [usersList, setUserList] = useState<Users>(users);
   return(
-    <>
+    <div className="card-list-container">
       {
         usersList.map((userDetails : User, key: number)=>{
           return(
@@ -23,7 +26,7 @@ const UsersList = ({users}: UsersListProps) => {
             )
         })
       }
-    </>
+    </div>
   )
 }
 
