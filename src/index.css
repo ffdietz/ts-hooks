@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', 'Oxygen';
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+
+}
+
+.App{
+  align-items: center;
+  justify-content: center;
+}
