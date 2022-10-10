@@ -7,8 +7,8 @@ import {
   UserCardProps, 
   FilterContextType, 
   FilterProviderProps 
-} from './types'
-import './index.css'
+} from '../types/types'
+
 
 
 const UserCard = ({user}: UserCardProps) => {
@@ -29,18 +29,24 @@ const UsersList = ({users}: UsersListProps) => {
   const [usersList] = useState<Users>(users);
   const { filterUser } = useContext<FilterContextType>(UserFilterContext);
 
-  console.log('filterUser :>> ', filterUser);
+  // improve filtering
+  const filteredList: Users = usersList.filter((user) =>
+    user.name.first.toLowerCase().includes(filterUser.toLowerCase()) 
+    ||
+    user.name.last.toLowerCase().includes(filterUser.toLowerCase())
+  );
 
   return(
     <div className="card-list-container">
       {
-        usersList.map((userDetails : User, key: number)=>{
-          return(
-            <div key={key}>
-              <UserCard user={userDetails}/>
-            </div>
-            )
-        })
+        filteredList
+          .map((userDetails : User, key: number)=>{
+            return(
+              <div key={key}>
+                <UserCard user={userDetails}/>
+              </div>
+              )
+          })
       }
     </div>
   )
@@ -127,3 +133,7 @@ const App = () => {
 }
 
 export default App;
+
+
+// hooks example // https://github.com/jherr/no-bs-ts/blob/master/series-1/episode-21/src/App.tsx
+// useContext // https://dev.to/ms_yogii/usecontext-for-better-state-management-51hi
