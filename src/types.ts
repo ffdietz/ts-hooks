@@ -1,3 +1,5 @@
+import { ReactNode } from 'react'
+
 export type ApiRequest = {
   results: Users;
   info:
@@ -74,4 +76,13 @@ export type UsersListProps = {
 
 export type UserCardProps = {
   user: User;
+}
+
+export type FilterContextType = {
+  filterUser: string;
+  setFilter: (filter: string) => void;
+} 
+
+export type FilterProviderProps = {
+  children: ReactNode | ReactNode[]
 }
