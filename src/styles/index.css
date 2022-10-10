@@ -20,6 +20,9 @@ body {
   font-family: Geneva, Verdana, sans-serif;
 }
 
+.input-filter-container{
+  justify-content: center;
+}
 .card-list-container{
   display: flex;
   flex-wrap: wrap;
@@ -28,14 +31,14 @@ body {
 }
 
 .card-container{
-  height: 500px;
+  height: 420px;
   display: flex;
   flex-direction: column;
 }
 
 .card-cover-img{
-  width: 250px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   border: 1px solid #0FF;
 }
 
@@ -48,11 +51,11 @@ body {
 }
 
 input[type=text] {
-  width: 100px;
+  width: 250px;
   border: none;
   border-radius: 4px;
   font-size: 1.2rem;
-  background-color: #339;
+  background-color: #115;
   padding: 10px;
   color: #FFF;
 
@@ -60,7 +63,7 @@ input[type=text] {
 }
 
 input[type=text]:focus {
-  width: 40%;
+  width: 50%;
   border: none;
   box-shadow: 0 0 5px rgba(80, 200, 240, 1);
   background-color: #000;
@@ -68,8 +71,18 @@ input[type=text]:focus {
 }
 
 button{
-  width: 40px;
-  height: 40px;
+  width: 25px;
+  height: 25px;
   color: #000;
   margin-right: 10px;
+  text-align: center;
+  margin: auto;
+}
+.sorting-icons{
+  display: flex;
+  margin-top: 15px;
+}
+
+.sorting-icons span{
+  margin: 0px 10px;
 }

@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 
 export type ApiRequest = {
-  results: Users;
+  results: User[];
   info:
   {
     "seed": string,
@@ -68,16 +68,15 @@ export type User = {
   "nat": string
 }
 
-export type Users = User[];
-
 export type UsersListProps = {
-  users: Users;
+  users: User[];
 }
 
 export type UserCardProps = {
   user: User;
 }
 
+//useContext
 export type FilterContextType = {
   filterUser: string;
   setFilter: (filter: string) => void;
@@ -85,4 +84,20 @@ export type FilterContextType = {
 
 export type FilterProviderProps = {
   children: ReactNode | ReactNode[]
+}
+
+//useReducer
+export type State = {
+  sortedList: User[];
+}
+
+enum ActionKind{
+  ASCENDING = 'ASCENDING',
+  DESCENDING = 'DESCENDING',
+}
+export type Action = {
+  type: ActionKind,
+  payload: {
+    userList: User[];
+  } 
 }
