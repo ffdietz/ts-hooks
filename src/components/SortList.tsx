@@ -1,12 +1,4 @@
 
-const reducer = (state: State, action: Action): State =>{
-  switch(action.type){
-    case 'ASCENDING':{
-      
-    }
-  }
-}
-
 const SortList = () => {
   return (
     <div className="sorting-icons">

@@ -88,16 +88,25 @@ export type FilterProviderProps = {
 
 //useReducer
 export type State = {
-  sortedList: User[];
+  users: User[];
 }
 
-enum ActionKind{
+export enum ActionDirection{
   ASCENDING = 'ASCENDING',
   DESCENDING = 'DESCENDING',
 }
+
+export enum ActionSorting{
+  FIRST_NAME = 'first-name',
+  LAST_NAME = 'last-name',
+  AGE = 'age',
+  NAT = 'nat',
+  USER = 'username'
+}
+
 export type Action = {
-  type: ActionKind,
+  type: ActionDirection,
   payload: {
-    userList: User[];
+    sort_by: ActionSorting,
   } 
 }
