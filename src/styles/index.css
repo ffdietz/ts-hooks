@@ -16,7 +16,6 @@ body {
 
 .list-header{
   margin-top: 10vh;
-  margin-bottom: 10vh;
   font-family: Geneva, Verdana, sans-serif;
 }
 
@@ -71,15 +70,20 @@ input[type=text]:focus {
 }
 
 button{
-  width: 50px;
+  width: auto;
   height: 25px;
   color: #000;
+  padding: 0.4rem .8rem;
+  margin-right: 5px;
+  font-size: 0.8rem;
+  
+  background-color: #000;
+  color: #EE5;
+  border-radius: 3px;
+  border: 1px solid #550;
 }
 .sorting-icons{
   display: flex;
-  margin-top: 15px;
-}
-
-.sorting-icons span{
-  margin: 0px 10px;
+  margin-top: 1rem;
+  margin-bottom: 50px;
 }

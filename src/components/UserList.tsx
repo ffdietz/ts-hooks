@@ -4,14 +4,13 @@ import {
   UsersListProps, 
   FilterContextType,
   State,
-  SortAction,
-  ActionPayload,
 } from '../types/types'
 
 import UserCard from "./UserCard";
 import {UserFilterContext} from '../utils/FilterContext'
 
 import { reducer} from '../utils/SortReducer';
+import SortList from "./SortList";
 
 const UsersList = ({users}: UsersListProps) => {
   const [usersList] = useState<User[]>(users);
@@ -34,52 +33,22 @@ const UsersList = ({users}: UsersListProps) => {
   }, [])
 
   return(
-    <div className="card-list-container">
-      <button onClick={ () => dispatch({ type: SortAction.DIRECTION })}
-      > DIR </button>
-
-      <button onClick={ () => 
-        dispatch({ 
-          type: SortAction.FIRST_NAME, 
-          payload: {
-            direction: ActionPayload.ASCENDING
-        }})}
-      > FIRST </button>
-
-      <button onClick={ () => 
-        dispatch({ 
-          type: SortAction.LAST_NAME, 
-          payload: {
-            direction: ActionPayload.ASCENDING
-        }})}
-      > LAST </button>
-
-      <button onClick={ () => 
-        dispatch({ 
-          type: SortAction.AGE, 
-          payload: {
-            direction: ActionPayload.ASCENDING
-        }})}
-      > AGE </button>
-
-      <button onClick={ () => 
-        dispatch({ 
-          type: SortAction.NAT, 
-          payload: {
-            direction: ActionPayload.ASCENDING
-        }})}
-      > NATIONALITY </button>
-    {
-      sortedUser.users
+    <>
+      <SortList dispatch={dispatch}/>
+      
+      <div className="card-list-container">
+      {
+        sortedUser.users
         .map((userDetails : User, key: number)=>{
           return(
             <div key={key}>
-              <UserCard user={userDetails}/>
-            </div>
-            )
-        })
-    }
-    </div>
+                <UserCard user={userDetails}/>
+              </div>
+              )
+            })
+          }
+      </div>
+    </>
   )
 }
 

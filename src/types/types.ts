@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { ReactNode, Dispatch } from 'react'
 
 export type ApiRequest = {
   results: User[];
@@ -110,4 +110,8 @@ export type Action = {
   payload?: {
     direction?: ActionPayload
   } 
+}
+
+export type SortListProps = {
+  dispatch: Dispatch<Action>
 }
