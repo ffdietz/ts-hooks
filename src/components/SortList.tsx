@@ -2,8 +2,8 @@
 const SortList = () => {
   return (
     <div className="sorting-icons">
-      <div>▲</div>
-      <div>▼</div>
+      <span>▲</span>
+      <span>▼</span>
       <span>first name</span>
       <span>last name</span>
       <span>age</span>

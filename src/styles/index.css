@@ -71,12 +71,9 @@ input[type=text]:focus {
 }
 
 button{
-  width: 25px;
+  width: 50px;
   height: 25px;
   color: #000;
-  margin-right: 10px;
-  text-align: center;
-  margin: auto;
 }
 .sorting-icons{
   display: flex;

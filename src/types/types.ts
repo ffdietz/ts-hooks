@@ -91,22 +91,23 @@ export type State = {
   users: User[];
 }
 
-export enum ActionDirection{
-  ASCENDING = 'ASCENDING',
-  DESCENDING = 'DESCENDING',
+export enum SortAction{
+  DIRECTION = 'DIRECTION',
+  FIRST_NAME = 'FIRST_NAME',
+  LAST_NAME = 'LAST_NAME',
+  AGE = 'AGE',
+  NAT = 'NAT',
+  USER = 'USERNAME'
 }
 
-export enum ActionSorting{
-  FIRST_NAME = 'first-name',
-  LAST_NAME = 'last-name',
-  AGE = 'age',
-  NAT = 'nat',
-  USER = 'username'
+export enum ActionPayload{
+  ASCENDING = 'ASCENDING',
+  DESCENDING = 'DESCENDING'
 }
 
 export type Action = {
-  type: ActionDirection,
-  payload: {
-    sort_by: ActionSorting,
+  type: SortAction,
+  payload?: {
+    direction?: ActionPayload
   } 
 }
