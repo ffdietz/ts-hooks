@@ -13,6 +13,7 @@ export const reducer = (state: State, action: Action): State =>{
       console.log('desc');
       return {
         ...state,
+        users: state.users.sort((a,b) => a.name.first.localeCompare(b.name.first))
        }
     default: 
       return state
