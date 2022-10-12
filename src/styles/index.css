@@ -4,7 +4,7 @@ body {
   
   margin: 0;
   font-family: Tahoma, sans-serif;
-  background-color: #101;
+  background-color: #112;
   color: #FFF;
   
 }
@@ -25,20 +25,31 @@ body {
 .card-list-container{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   transition: all 0.5s;
 }
 
 .card-container{
-  height: 420px;
+  height: 370px;
   display: flex;
   flex-direction: column;
+  margin: 20px;
+  padding: 15px 40px;
+
+  border: 1px solid #222;
+  border-radius: 5px;
+  background-color: #111;
 }
 
 .card-cover-img{
   width: 200px;
   height: 200px;
-  border: 1px solid #0FF;
+  border-radius: 5px;
+  filter: contrast(180%) grayscale(100%);
+}
+
+.card-cover-img:hover {
+  filter: contrast(250%);
 }
 
 .card-name{
@@ -82,6 +93,7 @@ button{
   border-radius: 3px;
   border: 1px solid #550;
 }
+
 .sorting-icons{
   display: flex;
   margin-top: 1rem;

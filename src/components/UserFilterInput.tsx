@@ -1,4 +1,4 @@
-import { useRef, useContext } from "react";
+import { useRef, useContext, useCallback, ChangeEvent } from "react";
 import {
   FilterContextType
 } from '../types/types'
@@ -8,12 +8,13 @@ const UserFilterInput = () => {
   const inputFilterRef = useRef<HTMLInputElement>(null);
   const { setFilter } = useContext<FilterContextType>(UserFilterContext);
 
-  function handleFilter (event : any){
-    event.target?.value ? 
-      setFilter(event.target.value)
-      :
-      setFilter('');
-  }
+  const handleFilter = useCallback(
+    (event: ChangeEvent<HTMLInputElement>): void => {
+      event.target?.value ? 
+        setFilter(event.target.value)
+        :
+        setFilter('');
+    }, []);
 
   return(
     <div className="input-filter-container">

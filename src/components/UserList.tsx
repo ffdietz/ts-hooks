@@ -1,4 +1,4 @@
-import { useContext, useEffect, useReducer, useState } from "react";
+import { useContext, useEffect, useMemo, useReducer, useState } from "react";
 import { 
   User,
   UsersListProps, 
@@ -24,18 +24,19 @@ const UsersList = ({users}: UsersListProps) => {
   const initialState: State = {users: filteredList};
   const [sortedUser, dispatch] = useReducer(reducer, initialState);
 
-  useEffect(() => {
-    const filteredUsers: User[] = usersList.filter((user) => 
+  const filteredUsers: User[] = useMemo(() =>
+    usersList.filter((user) => 
       user.name.first.toLowerCase().includes(filterUser.toLowerCase()) ||
       user.name.last.toLowerCase().includes(filterUser.toLowerCase())
-    );
+  ), [filterUser]);
+  
+  useEffect(() => {
     setFilteredList(filteredUsers);
-  }, [])
+  }, [filteredUsers])
 
   return(
     <>
       <SortList dispatch={dispatch}/>
-      
       <div className="card-list-container">
       {
         sortedUser.users

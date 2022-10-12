@@ -2,11 +2,12 @@
 import { ActionPayload, SortAction, SortListProps } from "../types/types"
 
 const SortList = ({dispatch}: SortListProps) => {
+
   return (
     <div className="sorting-icons">
 
-      <button onClick={ () => dispatch({ type: SortAction.DIRECTION })}
-        > ▲▼ </button>
+      {/* <button onClick={ () => dispatch({ type: SortAction.DIRECTION })}
+        > ▲▼ </button> */}
 
       <button onClick={ () => 
         dispatch({ 
@@ -31,14 +32,6 @@ const SortList = ({dispatch}: SortListProps) => {
             direction: ActionPayload.ASCENDING
         }})}
       > AGE </button>
-
-      <button onClick={ () => 
-        dispatch({ 
-          type: SortAction.NAT, 
-          payload: {
-            direction: ActionPayload.ASCENDING
-        }})}
-      > NATIONALITY </button>
     </div>
   )
 }
