@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useMemo, useState } from 'react';
 
 import { FilterProviderProps, FilterContextType } from '../types/types';
 
@@ -12,9 +12,13 @@ export const UserFilterContext = createContext<FilterContextType>({
 export function UserFilterProvider({ children } : FilterProviderProps) {
   const [filterUser, setFilter] = useState<string>('');
 
+  const value = useMemo(() => ({ filterUser, setFilter }), [filterUser]);
+
   return (
-    <UserFilterContext.Provider value={{ filterUser, setFilter }}>
+    <UserFilterContext.Provider value={value}>
       {children}
     </UserFilterContext.Provider>
   );
 }
+
+// https://blog.agney.dev/useMemo-inside-context/
