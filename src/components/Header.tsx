@@ -1,13 +1,13 @@
-import HeaderTitle from "./HeaderTitle"
-import UserFilterInput from "./UserFilterInput"
+import HeaderTitle from './HeaderTitle';
+import UserFilterInput from './UserFilterInput';
 
-const Header = () => {
-  return(
+function Header() {
+  return (
     <div className="list-header">
-      <HeaderTitle/>
+      <HeaderTitle />
       <UserFilterInput />
     </div>
-  )
+  );
 }
 
-export default Header
+export default Header;
