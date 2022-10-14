@@ -8,12 +8,9 @@ function UserFilterInput() {
   const inputFilterRef = useRef<HTMLInputElement>(null);
   const { setFilter } = useContext<FilterContextType>(UserFilterContext);
 
-  const handleFilter = useCallback(
-    (event: ChangeEvent<HTMLInputElement>): void => (
-      event.target?.value ? setFilter(event.target.value) : setFilter(' ')
-    ),
-    [],
-  );
+  const handleFilter = useCallback((event: ChangeEvent<HTMLInputElement>): void => (
+    event.target?.value ? setFilter(event.target.value) : setFilter(' ')
+  ), []);
 
   return (
     <div className="input-filter-container">

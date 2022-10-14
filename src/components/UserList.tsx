@@ -11,7 +11,7 @@ import {
 import UserCard from './UserCard';
 import { UserFilterContext } from '../utils/FilterContext';
 
-import { reducer } from '../utils/SortReducer';
+import reducer from '../utils/SortReducer';
 import SortList from './SortList';
 
 function UsersList({ users }: UsersListProps) {

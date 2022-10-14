@@ -30,26 +30,36 @@ body {
 }
 
 .card-container{
-  height: 370px;
+  width: 400px;
+  height: 200px;
   display: flex;
-  flex-direction: column;
-  margin: 20px;
-  padding: 15px 40px;
+  flex-direction: row;
+  margin: 5px;
+  padding: 10px 5px;
 
-  border: 1px solid #222;
-  border-radius: 5px;
-  background-color: #111;
+  border: 3px solid rgb(109, 13, 57);
+  border-radius: 3px;
+  background-color: #000;
 }
 
 .card-cover-img{
   width: 200px;
   height: 200px;
-  border-radius: 5px;
-  filter: contrast(180%) grayscale(100%);
+  border-radius: 3px;
+  filter: contrast(300%) grayscale(100%);
 }
 
 .card-cover-img:hover {
-  filter: contrast(250%);
+  filter: contrast(120%);
+}
+
+.card-details{
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  justify-content: space-between;
+  width: 100%;
+  text-align: justify;
 }
 
 .card-name{
@@ -65,7 +75,7 @@ input[type=text] {
   border: none;
   border-radius: 4px;
   font-size: 1.2rem;
-  background-color: #115;
+  background-color: #AAC;
   padding: 10px;
   color: #FFF;
 
